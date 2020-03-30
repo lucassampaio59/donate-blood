@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Be a donor!</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="images/donate.png" alt="Imagem escrita DOE">
+        <h2>Your donor matters</h2>
+        <p>Up to three lives with a donation</p>
+        <p>More than 30.000 donations are necessary everyday</p>
+        <p>Only 1.9% of the Brazillian population donates blood... 😢</p>
+        <button>I want to help</button>
+    </header>
+
+    <section class="form hide">
+        <h2>Join the donor list</h2>
+        <form action="/" method="POST">
+            <input type="text" name="name" placeholder="Full Name">
+            <input type="text" name="email" placeholder="E-Mail">
+            <input type="text" name="bloodType" placeholder="Blood Type">
+            <button>Help!</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Last <span>donors:</span></h2>
+
+        <section class="donors">
+
+            {% for donor in donors %}
+
+                <div class="donor">
+                    <div class="blood">{{donor.blood_type}}</div>
+                    <p>{{donor.name}}</p>
+                </div>
+
+            {%endfor%}
+
+        </section>
+    </main>
+
+    <footer>Thanks for your visit ❤️</footer>
+
+    <script src="javascript/scripts.js"></script>
+</body>
+
+</html>
